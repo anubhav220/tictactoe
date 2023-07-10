@@ -5,7 +5,8 @@ let gameover= new Audio("gameover.mp3");
 let music= new Audio("music.mp3");
 let turn="X";
 let over=false;
-
+let playe1= document.querySelector(".playe1");
+let playe2= document.querySelector(".playe2");
 const changeTurn = ()=>{
     return turn==="X"?"0":"X";
 }
@@ -28,11 +29,17 @@ const checkWin= ()=>{
         if((booxtext[e[0]].innerText === booxtext[e[1]].innerText) && (booxtext[e[2]].innerText === booxtext[e[1]].innerText) && (booxtext[e[0]].innerText !== "") )
         {     
             document.querySelector('.image').getElementsByTagName('img')[0].style.width = "200px";
-            document.querySelector('.info').innerText = booxtext[e[0]].innerText + " Won";
+            if(booxtext[e[0]].innerText ==='X'){
+            document.querySelector('.info').innerText = playe1.value+ " Won";
+            }
+            else{
+                document.querySelector('.info').innerText =playe2.value+ " Won";
+            }
             document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
             document.querySelector(".line").style.width = "20vw";
             over=true;
             gameover.play();
+            
         }
      
     })
@@ -66,6 +73,11 @@ res.addEventListener("click", function(){
            turn ="X";
            infoo.innerText="Turn for " +turn;
            document.querySelector(".line").style.width = "0vw";
+           playe1.value="";
+           playe2.value="";
     })
 
 })
+//x
+
+
