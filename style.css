@@ -1,0 +1,110 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color:rgb(17, 103, 129);
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    display:flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul{
+    list-style: none;
+}
+.gamecont{
+    background-color: white;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.gameinfo h1{
+    color: rgb(76, 138, 197);
+}
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: rgb(76, 138, 197);
+    transition: width 0.1s step-end
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    font-family: 'Poppins', sans-serif;
+}
+.box{
+    border: 2px solid black;
+    font-size: 6vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+background-color: rgb(169, 208, 228);
+}
+.gameinfo{
+    padding: 0px 32px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.br-0{
+  border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
+.image img{
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.reset {
+    margin-left: 100px;
+    font-size: 15px;
+    font-family: 'Poppins';
+    padding: 0px 2.5px;
+    color: white;
+    background-color: #271c0a;
+    cursor: pointer;
+}
+.info{
+    font-size: 20px;
+}
+@media screen and (max-width: 900px)
+{
+    .gamecont{
+        flex-wrap: wrap;
+    }
+    .gameinfo{
+        margin-top: 34px;
+    }
+    .gameinfo h1{
+        font-size: 1.5rem;
+    }
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
